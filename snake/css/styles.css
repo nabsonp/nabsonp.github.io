@@ -1,0 +1,68 @@
+#board {
+    background-color: #EEEEEE;
+    border: 1px solid #111111;
+    background-image: url("../grass.png");
+    background-repeat: repeat-x;
+}
+
+#board td {
+    width: 12px;
+    height: 12px;
+}
+
+.game-over {
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    position: absolute;
+    left: 100px;
+    top: 200px;
+    width: 400px;
+    height: 200px;
+    background-color: aqua;
+    padding: 20px;
+}
+
+.game-over h1 {
+    background-color: white;
+    text-align: center;
+}
+
+.init {
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    position: absolute;
+    left: 100px;
+    top: 200px;
+    width: 400px;
+    height: 200px;
+    background-color: aqua;
+    padding: 20px;
+}
+
+.init h1 {
+    background-color: white;
+    text-align: center;
+}
+
+.pause {
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    position: absolute;
+    left: 100px;
+    top: 200px;
+    width: 400px;
+    height: 200px;
+    background-color: aqua;
+    padding: 20px;
+}
+
+.pause h1 {
+    background-color: white;
+    text-align: center;
+}
