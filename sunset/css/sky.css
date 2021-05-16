@@ -1,0 +1,43 @@
+body {
+    overflow: unset;
+}
+
+#sky {
+    width: 100vw;
+    height: 90vh;
+    background-image: linear-gradient(#b5e6ff, #6ac6ff);
+    display: flex;
+    flex-direction: row;
+    justify-items: end;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+#sky .mountain:nth-child(1) {
+    left: 10vw;
+}
+
+#sky :nth-child(3) {
+    right: 10vw;
+}
+
+.main-mountain {
+    width: 0;
+    height: 0;
+    border-left: 300px solid transparent;
+    border-right: 300px solid transparent;
+    border-bottom: 600px solid #72c66b;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 10;
+}
+
+.mountain {
+    width: 0;
+    height: 0;
+    border-left: 300px solid transparent;
+    border-right: 300px solid transparent;
+    border-bottom: 400px solid #68af61;
+    position: absolute;
+}

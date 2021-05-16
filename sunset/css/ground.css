@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#ground {
+    background-color: #72c66b;
+    width: 100vw;
+    height: 10vh;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#ground div {
+    display: flex;
+    flex-direction: row;
+}
+
+.ground-details {
+    background-color: #8ad882;
+    border-radius: 20px;
+}
+
+#ground :nth-child(1) :nth-child(1) {
+    width: 15vw;
+    height: 3vh;
+    margin-left: 2vw;
+}
+
+#ground :nth-child(1) :nth-child(2) {
+    width: 3vw;
+    height: 3vh;
+    margin-left: 2vw;
+}
+
+#ground :nth-child(2) {
+    width: 8vw;
+    height: 3vh;
+    margin-left: 2vw;
+}
+
+#ground :nth-child(3) {
+    margin-top: 20px;
+}
+
+#ground :nth-child(3) :nth-child(1) {
+    width: 2vw;
+    height: 3vh;
+    margin-left: 1vw;
+}
+
+#ground :nth-child(3) :nth-child(2) {
+    width: 10vw;
+    height: 3vh;
+    margin-left: 1vw;
+    position: relative;
+    margin-right: 2vw;
+}
