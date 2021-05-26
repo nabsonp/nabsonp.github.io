@@ -13,7 +13,7 @@
   let FPS = 5;
   let board;
   let snake;
-  let coin;
+  let egg;
   let playing;
   let gameOver;
   let pause;
@@ -35,7 +35,7 @@
     board = new Board();
     snake = new Snake();
     FPS = 5;
-    coin = undefined;
+    egg = undefined;
     playing = false;
     pause = false;
     pauseAllowed = false;
@@ -231,6 +231,7 @@
         [4, 7],
       ];
       this.className = "python_body";
+      this.direcaoMudou = false
 
       this.direcao = Direcao.DIREITA;
       this.corpo.forEach(
@@ -259,6 +260,8 @@
           break;
       }
 
+      this.direcaoMudou = false;
+
       if (
         this.corpo.filter((pos) => pos[0] === add[0] && pos[1] === add[1])
           .length > 0 ||
@@ -281,7 +284,7 @@
         `#board tr:nth-child(${rem[0]}) td:nth-child(${rem[1]})`
       ).className = undefined;
 
-      if (add[0] === coin.posicao[0] && add[1] === coin.posicao[1]) {
+      if (add[0] === egg.posicao[0] && add[1] === egg.posicao[1]) {
         return Evento.COIN_COLLECTED;
       }
     }
@@ -298,10 +301,13 @@
         (direcao === Direcao.BAIXO && this.direcao === Direcao.CIMA) ||
         (direcao === Direcao.CIMA && this.direcao === Direcao.BAIXO) ||
         (direcao === Direcao.ESQUERDA && this.direcao === Direcao.DIREITA) ||
-        (direcao === Direcao.DIREITA && this.direcao === Direcao.ESQUERDA)
+        (direcao === Direcao.DIREITA && this.direcao === Direcao.ESQUERDA) ||
+        this.direcaoMudou
       ) {
         return;
       }
+
+      this.direcaoMudou = true;
 
       this.direcao = direcao;
     }
@@ -309,10 +315,9 @@
 
   class Egg {
     constructor() {
-      const x = Math.floor(Math.random() * (TAM - 1)) + 1;
-      const y = Math.floor(Math.random() * (TAM - 1)) + 1;
+      const x = Math.floor(Math.random() * (TAM - 2)) + 1;
+      const y = Math.floor(Math.random() * (TAM - 2)) + 1;
       this.posicao = [x, y];
-      console.log(this.posicao)
       if (Math.random() > 0.33) {
         this.className = "blue_egg";
         this.pontos = 1;
@@ -331,8 +336,8 @@
       return;
     }
 
-    if (coin === undefined) {
-      coin = new Egg();
+    if (egg === undefined) {
+      egg = new Egg();
     }
 
     frames++;
@@ -352,9 +357,9 @@
         board.showGaveOverModal();
         return;
       case Evento.COIN_COLLECTED:
-        board.incrementarPontuacao(coin.pontos);
+        board.incrementarPontuacao(egg.pontos);
         snake.crescer();
-        coin = new Egg();
+        egg = new Egg();
         break;
     }
     setTimeout(run, 1000 / FPS);
