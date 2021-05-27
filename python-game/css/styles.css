@@ -10,19 +10,19 @@
 
 @keyframes float_modal {
   0% {
-    top: 200px;
+    top: 250px;
   }
   50% {
-    top: 205px;
+    top: 255px;
   }
 }
 
 @keyframes float_init {
   0% {
-    top: 100px;
+    top: 150px;
   }
   50% {
-    top: 105px;
+    top: 155px;
   }
 }
 
@@ -61,6 +61,10 @@ h1 {
   margin: 10px 0;
 }
 
+h1.my-name {
+  text-align: start;
+}
+
 h2 {
   color: #f7eb45 !important;
   font-family: text_font;
@@ -94,7 +98,7 @@ p {
   justify-content: space-between;
   flex-direction: column;
   position: absolute;
-  top: 200px;
+  top: 250px;
   left: 100px;
   background-color: #4e9c41;
   padding: 20px;
@@ -115,7 +119,7 @@ p {
 
 .init {
   left: 75px;
-  top: 100px;
+  top: 150px;
   width: 435px;
   height: 420px;
   transition: height 2s;

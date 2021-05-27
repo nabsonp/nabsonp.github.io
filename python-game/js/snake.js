@@ -98,6 +98,11 @@
       this.header.innerHTML = "00000";
       this.pontuacao = 0;
 
+
+      this.spanName = document.createElement("h1");
+      this.spanName.className = "my-name";
+      this.spanName.innerHTML = "Nabson Paiva";
+
       this.element = document.createElement("table");
       this.element.setAttribute("id", "board");
       for (let i = 0; i < TAM; i++) {
@@ -110,6 +115,7 @@
       }
       document.body.prepend(this.element);
       document.body.prepend(this.header);
+      document.body.prepend(this.spanName);
       document.body.prepend(this.modal);
     }
 
