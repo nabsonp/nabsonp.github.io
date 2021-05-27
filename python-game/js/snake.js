@@ -284,14 +284,16 @@
       document.querySelector(
         `#board tr:nth-child(${add[0]}) td:nth-child(${add[1]})`
       ).className = 'python_body';
-      
-      let rem = this.corpo.shift();
-      document.querySelector(
-        `#board tr:nth-child(${rem[0]}) td:nth-child(${rem[1]})`
-      ).className = undefined;
 
       if (add[0] === egg.posicao[0] && add[1] === egg.posicao[1]) {
         return Evento.COIN_COLLECTED;
+      }
+
+      let rem = this.corpo.shift();
+      if (rem[0] !== egg.posicao[0] || rem[1] !== egg.posicao[1]) {
+        document.querySelector(
+          `#board tr:nth-child(${rem[0]}) td:nth-child(${rem[1]})`
+        ).className = undefined;
       }
     }
 
